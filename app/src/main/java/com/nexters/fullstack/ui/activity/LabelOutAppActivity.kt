@@ -140,6 +140,11 @@ class LabelOutAppActivity : BaseActivity<ActivityLabelOutappBinding, LabelOutApp
         }
         addLabelAdapter.setItemClickListener { view, i, labelSource ->
             // TODO start add label activity and update my labels
+            startActivity(
+                Intent(
+                    this@LabelOutAppActivity,
+                    CreateLabelActivity::class.java
+                ))
         }
     }
 
