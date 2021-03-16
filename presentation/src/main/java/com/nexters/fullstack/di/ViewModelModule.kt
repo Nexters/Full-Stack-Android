@@ -22,7 +22,6 @@ val presentationMapper = module {
 val viewModelModule = module {
     viewModel { LabelOutAppViewModel(get()) }
     viewModel { MainViewModel(get(), get(named("label")), get(named("image")), get()) }
-    viewModel { LabelingViewModel(get(), get(), get()) }
     viewModel { OnBoardingViewModel() }
     viewModel { LabelingViewModel(get(), get(), get(named(KoinNamed.IMAGE)), get()) }
     viewModel { BottomSheetViewModel() }

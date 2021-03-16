@@ -5,6 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import com.nexters.fullstack.BaseViewModel
 import com.nexters.fullstack.Input
 import com.nexters.fullstack.Output
+import com.nexters.fullstack.source.LabellingState
+import com.nexters.fullstack.source.MainLabel
+import com.nexters.fullstack.source.PresentLocalFile
+import com.nexters.fullstack.source.State
 import com.nexters.fullstack.mapper.Mapper
 import com.nexters.fullstack.source.*
 import com.nexters.fullstack.source.data.LocalImageDomain

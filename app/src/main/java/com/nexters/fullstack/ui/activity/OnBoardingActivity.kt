@@ -2,6 +2,7 @@ package com.nexters.fullstack.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -21,6 +22,7 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding, OnBoardingVie
     override val layoutRes: Int = R.layout.activity_onboarding
     override val viewModel: OnBoardingViewModel by viewModel()
 
+    private lateinit var viewPagerAdapter : PagerAdapter
     private val prefDataStoreManager = PrefDataStoreManager()
 //    <  using shared preference  >
 //    private lateinit var sharedPref : SharedPreferences
@@ -34,14 +36,16 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding, OnBoardingVie
     }
 
     private fun initView(){
-        binding.pager.adapter = PagerAdapter(this)
+        viewPagerAdapter = PagerAdapter(this)
+        binding.pager.adapter = viewPagerAdapter
     }
 
     private fun initListner(){
         with(binding){
             tvButton.setOnClickListener {
                 with(pager){
-                    if(currentItem == PAGE_NUM-1){
+                    if(currentItem == viewPagerAdapter.itemCount-1){
+                        Log.e("test","last")
                         startMainActivity()
                     }else{
                         currentItem += 1
