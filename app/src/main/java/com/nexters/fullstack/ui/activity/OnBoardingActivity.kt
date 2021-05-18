@@ -45,7 +45,6 @@ class OnBoardingActivity : BaseActivity<ActivityOnboardingBinding, OnBoardingVie
             tvButton.setOnClickListener {
                 with(pager){
                     if(currentItem == viewPagerAdapter.itemCount-1){
-                        Log.e("test","last")
                         startMainActivity()
                     }else{
                         currentItem += 1
